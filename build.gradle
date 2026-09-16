@@ -1,0 +1,78 @@
+plugins {
+    id 'java-library'
+    id 'net.neoforged.moddev' version '2.0.147'
+}
+
+version = project.mod_version
+group = project.mod_group_id
+
+base {
+    archivesName = 'Psi-Eightfold'
+}
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(21)
+    withSourcesJar()
+}
+
+repositories {
+    maven {
+        name = 'CurseMaven'
+        url = 'https://www.cursemaven.com'
+        content { includeGroup 'curse.maven' }
+    }
+    exclusiveContent {
+        forRepository {
+            maven {
+                name = 'Modrinth'
+                url = 'https://api.modrinth.com/maven'
+            }
+        }
+        filter { includeGroup 'maven.modrinth' }
+    }
+}
+
+neoForge {
+    version = project.neo_version
+
+    mods {
+        psieightfold {
+            sourceSet sourceSets.main
+        }
+    }
+
+    runs {
+        client { client() }
+        server {
+            server()
+            programArgument '--nogui'
+        }
+    }
+}
+
+dependencies {
+    // Exact Psi build targeted by the release hooks.
+    implementation 'curse.maven:psi-241665:8786571'
+
+    // Required at runtime by the released mod. Eightfold deliberately does not
+    // compile against its classes, because the compatibility bridge is isolated.
+    runtimeOnly 'maven.modrinth:PwZn5epo:9Zk5jSpu'
+
+    // Optional integration. Kept out of the compile classpath on purpose.
+    runtimeOnly 'curse.maven:psitweaks-1458446:8839085'
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+tasks.named('jar', Jar).configure {
+    archiveFileName = "Psi-Eightfold-${project.mod_version}-neoforge-${project.minecraft_version}.jar"
+    manifest {
+        attributes([
+            'Implementation-Title': 'Psi: Eightfold',
+            'Implementation-Version': project.mod_version,
+            'Implementation-Vendor': 'MellowB'
+        ])
+    }
+}

@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Implementation-Title: Psi: Eightfold
+Implementation-Version: 0.1.0-alpha.1
+Implementation-Vendor: MellowB

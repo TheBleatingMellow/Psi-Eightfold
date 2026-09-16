@@ -1,0 +1,20 @@
+{
+  "main": "psieightfold:trick_teleport_entity",
+  "pieces": [
+    "psieightfold:trick_launch_arrow",
+    "psieightfold:trick_set_entity_name",
+    "psieightfold:trick_add_entity_tag",
+    "psieightfold:trick_remove_entity_tag",
+    "psieightfold:trick_reset_cad_color",
+    "psieightfold:trick_set_cad_color",
+    "psieightfold:operator_decimal_to_hex",
+    "psieightfold:operator_hex_to_decimal",
+    "psieightfold:operator_convert_base",
+    "psieightfold:operator_entity_name",
+    "psieightfold:operator_entity_has_tag",
+    "psieightfold:operator_entities_with_tag",
+    "psieightfold:operator_entities_with_name",
+    "psieightfold:trick_set_entity_scale",
+    "psieightfold:operator_entity_scale"
+  ]
+}

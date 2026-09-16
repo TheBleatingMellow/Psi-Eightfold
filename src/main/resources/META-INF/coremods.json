@@ -1,0 +1,7 @@
+{
+  "Psi Eightfold Core": "coremods/eightfold.js",
+  "Psi Eightfold Psionic Utilities Compatibility": "coremods/psionicutilities.js",
+  "Psi Eightfold Color System": "coremods/color.js",
+  "Psi Eightfold Conjure Circle Orientation": "coremods/circle_orientation.js",
+  "Psi Eightfold PsiTweaks Blaze Ball Integration": "coremods/blaze_ball.js"
+}

@@ -1,0 +1,63 @@
+modLoader = "javafml"
+loaderVersion = "[4,)"
+license = "MIT"
+
+[[mods]]
+modId = "psieightfold"
+displayName = "Psi: Eightfold"
+version = "0.1.0-alpha.1"
+authors = "MellowB"
+logoFile = "psieightfold.png"
+logoBlur = false
+credits = "Psi by Vazkii and contributors. Special thanks to jolteon my beloved."
+description = '''
+An independent addon for Psi focused on denser, more programmable spell construction.
+Eight-way connections, diagonal routing, four-channel Cross Connectors, dynamic numbers,
+conditional Tricks, entity metadata tools, base conversion, vanilla arrow launching,
+and optional Pehkui scale integration.
+'''
+
+[[dependencies.psieightfold]]
+modId = "psi"
+type = "required"
+versionRange = "[1.21.1-110,1.21.1-111)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.psieightfold]]
+modId = "minecraft"
+type = "required"
+versionRange = "1.21.1"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.psieightfold]]
+modId = "neoforge"
+type = "required"
+versionRange = "[21.1.207,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.psieightfold]]
+modId = "psionicutilities"
+type = "required"
+reason = "Required for Eightfold's Spell Programmer routing and drag workflow."
+versionRange = "[1.21-1.4]"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.psieightfold]]
+modId = "pehkui"
+type = "optional"
+reason = "Enables Eightfold entity scale spell pieces."
+versionRange = "[3,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.psieightfold]]
+modId = "psitweaks"
+type = "optional"
+reason = "Recommended. Enables Eightfold's enhanced Blaze Ball integration."
+versionRange = "[1.21.1-0.10.8-hotfix]"
+ordering = "AFTER"
+side = "BOTH"
